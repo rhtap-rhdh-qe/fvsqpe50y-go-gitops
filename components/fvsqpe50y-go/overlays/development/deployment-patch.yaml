@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: fvsqpe50y-go
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/rhtap-task-runner:latest
-        name: container-image  
+        - image: quay.io/rhtap_qe/rhtap-qe-go:6410fcaa2549bbd09e617cd87aaf3fe2f14b0a03@sha256:caf74ddb126c6abe9803f909729015032f67b341fb9e57fff877b07a0b986a9f
+          name: container-image
